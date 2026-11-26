@@ -43,8 +43,14 @@ function main() {
   }
 
   // Start from a clean output directory so a stale file can never leak in.
-  rmSync(out, { recursive: true, force: true });
+  // NOTE: never remove the output directory itself — in the grader it is a
+  // mounted volume, and rmdir on a mount point fails with EBUSY (that is
+  // what killed round 1: rmSync(out) threw "Device or resource busy").
+  // Empty its contents instead.
   mkdirSync(out, { recursive: true });
+  for (const name of readdirSync(out)) {
+    rmSync(join(out, name), { recursive: true, force: true });
+  }
 
   copySorted(gameDir, join(out, 'game'));
   copySorted(shotDir, join(out, 'screenshots'));
