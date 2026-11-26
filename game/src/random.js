@@ -1,0 +1,1 @@
+{"scheme":"drand-quicknet","chain":"52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971","round":34295738,"signature":"b7f6ab6ac4a3f160ddab03221ac4fb892edd0c75d837525540ec28ae85d27b561581ef2640edb7c75c6a9bae4cff69cd","wallet":"EqXCFkriT28qK2rSqgBjGbhLwiMfrYWCqheF9QSy2Kxx"}
